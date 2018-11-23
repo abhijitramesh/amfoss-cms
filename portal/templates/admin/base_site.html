@@ -1,0 +1,59 @@
+{% extends 'admin/base_site.html' %}
+{% load staticfiles %}
+{% load static %}
+
+{% block branding %}
+    <style>
+    .dashboard { background: #eee; }
+    #header {
+        padding: 0.5rem 10%;
+        background-color: #222;
+        height: 3.5rem;
+    }
+    #branding { height: 100%; }
+    .head {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+    div.breadcrumbs
+    {
+        background: #ffc107;
+        color: black!important;
+    }
+    div.breadcrumbs a
+    {
+        color: black!important;
+    }
+    .module h2, .module caption, .module caption a
+    {
+        background: #ffc107;
+        color: black!important;
+        padding: 0.8rem;
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+    .submit-row input
+    {
+        background: #ffc107!important;
+        color: black!important;
+    }
+    #user-tools
+    {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+    #user-tools a
+    {
+        border-bottom: 0;
+        padding-right: 0.35rem;
+        padding-left: 0.35rem;
+    }
+    .module table caption a:hover { text-decoration: none; }
+    </style>
+    <div class="head">
+                <img class="brand_img" src="{% static 'images/logo_light.png'%}"  style="height: 2.5rem;" alt="logo">
+                <h1 style="padding: 0 1rem;">amFOSS Admin</h1>
+    </div>
+{% endblock %}
