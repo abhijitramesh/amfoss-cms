@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+### 0.0.3 - SASS & HAML Support
+* Added Support for SASS & HAML precompilers
+
+**Features Added**
+* Added Footer & Sidebar
+
 ### 0.0.2 - REST API Support
 **Features Added**
 * **api:** Django Rest API for getting attendance, profile, responsibility details
