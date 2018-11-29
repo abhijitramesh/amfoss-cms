@@ -2,8 +2,7 @@
 The repository managing the web portal of amFOSS (FOSS@Amrita), a computer science club based in
 Amrita University, Amritapuri. 
 
-
-### Installation
+### Installation Instructions
 The portal is primarily a django based application, and to set it up we require to have 
 python environment with django and other project dependencies installed. Though one can
 work with the project without an virtual environment,  it is recommended to use one so 
@@ -53,14 +52,18 @@ now inside the `portal` directory you can work with the django application as us
 * **DevOps** - GitHub (Code Collaboration), Git (VCS), PyCharm (IDE), Atom (Text Editor)
 * **Utilities** - Google Analytics, jsDeliver (CDN)
 
-**Required Dependencies**
-```
-   Django==2.1.3
-   django-ckeditor==5.6.1
-   django-easy-select2==1.5.5
-   django-js-asset==1.1.0
-   djangorestframework==3.9.0
-   Pillow==5.3.0
-   pytz==2018.7
-```
+### Changelog
+Change log of this project can be found in [`HISTORY.md`](HISTORY.md).
 
+### License
+This project is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This project is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License (<https://www.gnu.org/licenses/>) for more details.
+
+© 2018 Team AmFOSS. See the [Contributors](CONTRIBUTORS.md) list here.

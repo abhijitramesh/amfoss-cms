@@ -42,6 +42,11 @@ class organization(models.Model):
         return self.name
 
 class profile(models.Model):
+    def get_dp_path(instance, filename):
+        ext = filename.split('.')[-1]
+        filename = "%s.%s" % (uuid.uuid4(), ext)
+        return 'static/uploads/images/dp/' + filename
+
     user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='User', help_text='Select User whose profile is being created')
     email = models.EmailField(max_length=254, null=True)
     phone = models.CharField(max_length=12, null=True)
@@ -50,7 +55,7 @@ class profile(models.Model):
     roll_number = models.CharField(max_length=25,null=True, blank=True)
     role = models.CharField( choices=ROLES, default='SL', max_length=2, verbose_name='Role')
     batch = models.IntegerField(null=True, help_text='Year of Admission', blank=True)
-    avatar = models.ImageField(default='',verbose_name='Profile Picture')
+    avatar = models.ImageField(default='',verbose_name='Profile Picture', upload_to=get_dp_path)
     location = models.CharField(max_length=200, null=True, blank=True)
     birthday = models.DateField(null=True, blank=True)
     bio = RichTextField(max_length=300, null=True, blank=True)
@@ -83,7 +88,7 @@ class work_experiances(models.Model):
     position = models.CharField(max_length=35, null=True)
     description = RichTextField(max_length=300, null=True, blank=True)
     start = models.DateTimeField()
-    end = models.DateTimeField()
+    end = models.DateTimeField(null=True, blank=True)
 
     class Meta:
         verbose_name_plural = "Work Experiances"
