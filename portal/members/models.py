@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 from status.models import thread
+import uuid
 
 
 ROLES = (
@@ -87,7 +88,7 @@ class work_experiances(models.Model):
     profile = models.ForeignKey(profile, on_delete=models.CASCADE,related_name='profile')
     position = models.CharField(max_length=35, null=True)
     description = RichTextField(max_length=300, null=True, blank=True)
-    start = models.DateTimeField()
+    start = models.DateTimeField(null=True, blank=True)
     end = models.DateTimeField(null=True, blank=True)
 
     class Meta:
