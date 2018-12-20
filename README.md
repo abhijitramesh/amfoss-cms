@@ -1,4 +1,4 @@
-# AmFOSS Portal
+# AmFOSS CMS
 The repository managing the web portal of amFOSS (FOSS@Amrita), a computer science club based in
 Amrita University, Amritapuri. 
 
@@ -46,7 +46,8 @@ now inside the `portal` directory you can work with the django application as us
 **Stack Details**
 
 * **Languages** - Python 3 (Backend), JavaScript (Frontend), HTML 5 (Frontend), Markdown (Documentation)
-* **Database** - mySQL (Production), SQLite3 (Development)
+* **API** - REST API
+* **Database** - PostgreSQL (Production), SQLite3 (Development)
 * **Frameworks** - Django (Full Stack), Bootstrap 4 (Frontend)
 * **Libraries** - JQuery, Sass, HAML, C3JS / D3JS (Charts)
 * **DevOps** - GitHub (Code Collaboration), Git (VCS), PyCharm (IDE), Atom (Text Editor)
