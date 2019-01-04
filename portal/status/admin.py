@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import thread, status
+from .models import Thread, Status
 
-admin.site.register(thread)
-admin.site.register(status)
+admin.site.register(Thread)
+admin.site.register(Status)
+

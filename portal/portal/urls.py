@@ -25,3 +25,5 @@ urlpatterns = [
     path('api/', include('api.urls')),
     path('', include('pages.urls')),
 ]
+
+admin.site.site_title = ("My Site Admin")

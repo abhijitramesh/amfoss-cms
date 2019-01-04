@@ -4,7 +4,7 @@ from .inlines import *
 from easy_select2 import select2_modelform
 
 
-class profileAdmin(admin.ModelAdmin):
+class ProfileAdmin(admin.ModelAdmin):
     fieldsets = (
         ('Basic Details', {
             'fields': (('user', 'role'), ('email', 'phone'),
@@ -18,58 +18,64 @@ class profileAdmin(admin.ModelAdmin):
         }),
 
     )
-    inlines = (sp_inline,wexp_inline)
+    inlines = (sp_inline, wexp_inline)
     list_display = ('first_name', 'last_name', 'role', 'batch')
     list_filter = ('batch','role')
     search_fields = ['first_name', 'last_name', 'email', 'phone', 'batch', 'role']
-    select2 = select2_modelform(profile, attrs={'width': '250px'})
+    select2 = select2_modelform(Profile, attrs={'width': '250px'})
     form = select2
 
 
-class attendanceAdmin(admin.ModelAdmin):
+class AttendanceAdmin(admin.ModelAdmin):
     fields  = ('member',('session_start', 'session_end'),)
-    select2 = select2_modelform(attendance, attrs={'width': '250px'})
+    select2 = select2_modelform(Attendance, attrs={'width': '250px'})
     form = select2
 
-class responsibilityAdmin(admin.ModelAdmin):
+
+class ResponsibilityAdmin(admin.ModelAdmin):
     search_fields = ['title', 'members']
     list_display = ('title', 'thread')
     list_filter = ('title','members')
-    select2 = select2_modelform(responsibility, attrs={'width': '250px'})
+    select2 = select2_modelform(Responsibility, attrs={'width': '250px'})
     form = select2
 
-class teamAdmin(admin.ModelAdmin):
+
+class TeamAdmin(admin.ModelAdmin):
     search_fields = ['name', 'members']
-    list_display = ('name', 'thread')
-    list_filter = ('name','members')
-    select2 = select2_modelform(team, attrs={'width': '250px'})
+    list_display = ('name', 'Thread')
+    list_filter = ('name', 'members')
+    select2 = select2_modelform(Team, attrs={'width': '250px'})
     form = select2
 
-class mentor_groupAdmin(admin.ModelAdmin):
+
+class MentorGroupAdmin(admin.ModelAdmin):
     search_fields = ['mentor', 'mentees']
     list_display = ('mentor',)
     list_filter = ('mentor',)
-    select2 = select2_modelform(mentor_group, attrs={'width': '250px'})
+    select2 = select2_modelform(MentorGroup, attrs={'width': '250px'})
     form = select2
 
-class portalAdmin(admin.ModelAdmin):
-    def has_module_permission(self, request):
-        return False
 
-class organizationAdmin(admin.ModelAdmin):
-    def has_module_permission(self, request):
-        return False
-
-class skillAdmin(admin.ModelAdmin):
+class PortalAdmin(admin.ModelAdmin):
     def has_module_permission(self, request):
         return False
 
 
-admin.site.register(profile,profileAdmin)
-admin.site.register(attendance,attendanceAdmin)
-admin.site.register(team,teamAdmin)
-admin.site.register(responsibility,responsibilityAdmin)
-admin.site.register(mentor_group,mentor_groupAdmin)
-admin.site.register(portal,portalAdmin)
-admin.site.register(organization,organizationAdmin)
-admin.site.register(skill,skillAdmin)
+class OrganizationAdmin(admin.ModelAdmin):
+    def has_module_permission(self, request):
+        return False
+
+
+class SkillAdmin(admin.ModelAdmin):
+    def has_module_permission(self, request):
+        return False
+
+
+admin.site.register(Profile, ProfileAdmin)
+admin.site.register(Attendance, AttendanceAdmin)
+admin.site.register(Team, TeamAdmin)
+admin.site.register(Responsibility, ResponsibilityAdmin)
+admin.site.register(MentorGroup, MentorGroupAdmin)
+admin.site.register(Portal, PortalAdmin)
+admin.site.register(Organization, OrganizationAdmin)
+admin.site.register(Skill, SkillAdmin)
